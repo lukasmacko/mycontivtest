@@ -1,5 +1,5 @@
-+ 1. Deploy two node cluster
-+ 2. Apply RBAC
+## 1. Deploy two node cluster
+## 2. Apply RBAC
 ```
 kubectl create clusterrolebinding permissive-binding \
   --clusterrole=cluster-admin \
@@ -8,7 +8,7 @@ kubectl create clusterrolebinding permissive-binding \
   --group=system:serviceaccounts
 
 ```
-+ 3. Deploy yaml files
+## 3. Deploy yaml files
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/lukasmacko/mycontivtest/master/02-ingress/1-default-backend.yaml
@@ -17,7 +17,7 @@ kubectl apply -f https://raw.githubusercontent.com/lukasmacko/mycontivtest/maste
 
 ```
 
-+ 3. a (optional) if the pods are not deployed on worker you'll have to add
+## 3.a (optional) if the pods are not deployed on worker you'll have to add
 ```
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -35,7 +35,7 @@ spec:
 
 ```
 
-+ 4. Verify that pods are deployed on worker
+## 4. Verify that pods are deployed on worker
 ```
 kubectl get pods -o wide --all-namespaces
 
@@ -50,7 +50,7 @@ default       nginx-default-backend-6bc86bb88-kqmxj   1/1       Running         
 
 ```
 
-+ 5. Find service IP if ingress-nginx
+## 5. Find service IP if ingress-nginx
 
 ```
 kubectl get svc
@@ -65,7 +65,7 @@ nginx-default-backend   ClusterIP      10.97.78.165     <none>        80/TCP    
 
 ```
 
-+ 6. Verify from both nodes. Expected output is the same
+## 6. Verify from both nodes. Expected output is the same
 
 ```
 $ curl 10.106.184.161
