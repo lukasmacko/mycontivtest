@@ -17,7 +17,7 @@ kubectl apply -f https://raw.githubusercontent.com/lukasmacko/mycontivtest/maste
 
 ```
 
-+ 3.a (optional) if the pods are not deployed on worker you'll have to add
++ 3. a (optional) if the pods are not deployed on worker you'll have to add
 ```
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -65,7 +65,7 @@ nginx-default-backend   ClusterIP      10.97.78.165     <none>        80/TCP    
 
 ```
 
-6. Verify from both nodes. Expected output is the same
++ 6. Verify from both nodes. Expected output is the same
 
 ```
 $ curl 10.106.184.161
